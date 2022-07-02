@@ -1,9 +1,10 @@
 package batch
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_getButch(t *testing.T) {
@@ -18,6 +19,7 @@ func Test_getButch(t *testing.T) {
 		{args: args{n: 10, pool: 1}, wantRes: createRes(10)},
 		{args: args{n: 10, pool: 2}, wantRes: createRes(10)},
 		{args: args{n: 10, pool: 5}, wantRes: createRes(10)},
+		{args: args{n: 10, pool: 3}, wantRes: createRes(10)},
 		{args: args{n: 20, pool: 4}, wantRes: createRes(20)},
 		{args: args{n: 100, pool: 10}, wantRes: createRes(100)},
 		{args: args{n: 15, pool: 5}, wantRes: createRes(15)},
